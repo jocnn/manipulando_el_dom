@@ -5,7 +5,9 @@ console.log(btnAdd)
 const createTask = (e) => {
 	e.preventDefault()
 	const inputTask = document.querySelector("[data-form-input-task]")
-	console.log(inputTask.value)
+	const valueInput = inputTask.value
+	inputTask.value = ""
+	console.log(valueInput)
 }
 
 btnAdd.addEventListener("click", createTask)
