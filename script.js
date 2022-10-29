@@ -7,7 +7,9 @@ const createTask = (e) => {
 	const inputTask = document.querySelector("[data-form-input-task]")
 	const valueInput = inputTask.value
 	inputTask.value = ""
-	const liTask = document.querySelector("[data-task]")
+	const list = document.querySelector("[data-list]")
+	const task = document.createElement("li")
+	task.classList.add("card")
 	const content = `
 		<div>
 			<i class="far fa-check-square icon"></i>
@@ -15,9 +17,9 @@ const createTask = (e) => {
 		</div>
 		<i class="fas fa-trash-alt trashIcon icon"></i>
 	`
-	liTask.innerHTML = content
-	//console.log(valueInput)
-	//console.log(liTask)
+	task.innerHTML = content
+
+	list.appendChild(task)
 }
 
 btnAdd.addEventListener("click", createTask)
