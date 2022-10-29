@@ -63,5 +63,6 @@ const deleteCourse = () => {
 }
 
 const deleteTask = (e) => {
-	console.log("delete task")
+	const parent = e.target.parentElement
+	parent.remove()
 }
