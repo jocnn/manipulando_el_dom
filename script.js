@@ -25,11 +25,11 @@ const createTask = (e) => {
 	// se agregó el span al div
 	taskContent.appendChild(titleTask)
 
-	// se agregó el icono de basura al div
-	taskContent.appendChild(trashDelete())
-
 	// se agregó la tarea al elemento li
 	task.appendChild(taskContent)
+	
+	// se agregó el icono de basura al div
+	task.appendChild(deleteCourse())
 
 	// se agregó el elemento li a la lista (ul) data-list
 	list.appendChild(task)
@@ -54,9 +54,14 @@ const completeTask = (e) => {
 	element.classList.toggle("far")
 }
 
-const trashDelete = () => {
+const deleteCourse = () => {
 	const i = document.createElement("i")
 	i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon")
+	i.addEventListener("click", deleteTask)
 
 	return i
+}
+
+const deleteTask = (e) => {
+	console.log("delete task")
 }
